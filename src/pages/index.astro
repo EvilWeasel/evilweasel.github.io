@@ -1,16 +1,33 @@
 ---
-
+import MainLayout from "@/layouts/main-layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <section>
+    <h1>Welcome to Astro</h1>
+    <p>
+      Astro is a new kind of static site builder that delivers lightning-fast
+      performance with a modern developer experience.
+    </p>
+  </section>
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li>Blazing fast performance</li>
+      <li>Modern developer experience</li>
+      <li>Zero config</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Get started</h2>
+    <p>To get started, run the following command in your terminal:</p>
+    <pre><code>npm init astro</code></pre>
+  </section>
+  <section>
+    <h2>Learn more</h2>
+    <p>
+      To learn more about Astro, visit the
+      <a href="https://docs.astro.build">official documentation</a>.
+    </p>
+  </section>
+</MainLayout>

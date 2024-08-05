@@ -1,0 +1,45 @@
+---
+import Navbar from "@/components/navbar.astro";
+import "src/utils/base.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link rel="stylesheet" href="/fonts/font-faces.css" />
+  </head>
+  <body class="dark:bg-slate-600 bg-slate-200 flex">
+    <header class="px-3 mt-2 md:min-w-[180px]">
+      <Navbar />
+    </header>
+    <main class="mt-12 p-4">
+      <slot />
+      <footer>
+        <p>© 2024 Astro</p>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>

@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  data-theme-button
+  class="bg-slate-300 dark:bg-slate-800 py-3 px-3 rounded-3xl"
+>
+  <div class="flex gap-x-5">
+    <Icon name="line-md:moon-alt-to-sunny-outline-loop-transition" />
+    <Icon name="line-md:sunny-outline-to-moon-alt-loop-transition" />
+  </div>
+  <div data-theme-toggle class="dark:bg-slate-300 bg-slate-800"></div>
+</button>
+
+<style>
+  [data-theme-button] {
+    position: relative;
+  }
+  [data-theme-toggle] {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 999;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  html.dark [data-theme-toggle] {
+    transform: translateX(100%);
+  }
+</style>
+
+<script is:inline>
+  const themeButton = document.querySelector("[data-theme-button]");
+  themeButton.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    window.localStorage.setItem(
+      "theme",
+      document.documentElement.classList.contains("dark") ? "dark" : "light"
+    );
+  });
+</script>

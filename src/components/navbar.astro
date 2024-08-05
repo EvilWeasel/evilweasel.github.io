@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import ThemeToggle from "./theme-toggle.astro";
+---
+
+<nav class="flex flex-col items-center">
+  <div class="py-5">
+    <img
+      class="rounded-[50%] shadow-lg"
+      src="https://picsum.photos/100/100"
+      alt="PB"
+    />
+  </div>
+  <div class="mb-6">
+    <ThemeToggle />
+  </div>
+  <ul class="w-full">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
+      <a href="/blog">Blog</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  ul li {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  ul li:hover {
+    @apply bg-slate-300;
+  }
+  ul li:hover a {
+    font-variation-settings:
+      "wght" 600,
+      "wdth" 105,
+      "slnt" -11;
+  }
+  html.dark ul li:hover {
+    @apply bg-slate-800;
+  }
+  ul li a {
+    display: block;
+    width: 100%;
+    font-variation-settings:
+      "wght" 400,
+      "wdth" 100,
+      "slnt" 0;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+  }
+</style>

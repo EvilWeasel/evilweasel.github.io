@@ -7,10 +7,20 @@ import { Icon } from "astro-icon/components";
   class="bg-slate-300 dark:bg-slate-800 py-3 px-3 rounded-3xl"
 >
   <div class="flex gap-x-5">
-    <Icon name="line-md:moon-alt-to-sunny-outline-loop-transition" />
-    <Icon name="line-md:sunny-outline-to-moon-alt-loop-transition" />
+    <Icon
+      name="line-md:moon-alt-to-sunny-outline-loop-transition"
+      class="text-yellow-100 transition-all"
+    />
+    <Icon
+      name="line-md:sunny-outline-to-moon-alt-loop-transition"
+      class="dark:text-red-950 transition-all"
+    />
   </div>
-  <div data-theme-toggle class="dark:bg-slate-300 bg-slate-800"></div>
+  <div
+    data-theme-toggle
+    class="dark:bg-slate-300 bg-slate-800 bg-opacity-70 dark:bg-opacity-80"
+  >
+  </div>
 </button>
 
 <style>
@@ -28,7 +38,7 @@ import { Icon } from "astro-icon/components";
     transition: all 0.3s ease;
   }
   html.dark [data-theme-toggle] {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
 </style>
 

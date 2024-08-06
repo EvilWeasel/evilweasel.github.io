@@ -1,33 +1,495 @@
 ---
+import Hero from "@/components/hero.astro";
 import MainLayout from "@/layouts/main-layout.astro";
 ---
 
 <MainLayout>
-  <section>
-    <h1>Welcome to Astro</h1>
-    <p>
-      Astro is a new kind of static site builder that delivers lightning-fast
-      performance with a modern developer experience.
-    </p>
-  </section>
-  <section>
-    <h2>Features</h2>
+  <Hero />
+  <section class="skills" id="skills">
     <ul>
-      <li>Blazing fast performance</li>
-      <li>Modern developer experience</li>
-      <li>Zero config</li>
+      <li>
+        <h3>HTML</h3>
+        <div class="skill-shadow">
+          <div
+            class="skill-bar"
+            style="
+                  width: 70%;
+                  background-color: red;
+                  box-shadow: 5px 0px 15px red;
+                "
+          >
+            <span class="value">70</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>CSS</h3>
+        <div class="skill-shadow">
+          <div
+            class="skill-bar"
+            style="
+                  width: 50%;
+                  background-color: rgb(0, 187, 187);
+                  box-shadow: 5px 0px 15px rgb(0, 187, 187);
+                "
+          >
+            <span class="value">50</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <div class="skill-shadow">
+          <div
+            class="skill-bar"
+            style="
+                  width: 30%;
+                  background-color: orange;
+                  box-shadow: 5px 0px 15px orange;
+                "
+          >
+            <span class="value">30</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>Vibes 😎</h3>
+        <div class="skill-shadow">
+          <div
+            class="skill-bar"
+            style="
+                  width: 90%;
+                  background-color: purple;
+                  box-shadow: 5px 0px 15px purple;
+                "
+          >
+            <span class="value">90</span>
+          </div>
+        </div>
+      </li>
     </ul>
   </section>
-  <section>
-    <h2>Get started</h2>
-    <p>To get started, run the following command in your terminal:</p>
-    <pre><code>npm init astro</code></pre>
+  <section class="timeline" id="timeline">
+    <h2 class="timeline-title">Lebenslauf</h2>
+    <ul class="timeline-items">
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">1998</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Initialisierung</h3>
+          <p class="timeline-text">Geburt in Heilbronn</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">2014-2015</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Realschulabschluss</h3>
+          <p class="timeline-text">Linux; Gaming; Orientierungssuche;</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">2014-2015</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">FSJ beim ASB</h3>
+          <p class="timeline-text">
+            Freiwilliges Soziales Jahr beim Arbeiter-Samariter-Bund
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">2015-2020</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">
+            Ausbildung: Fachkraft Lebensmitteltechnik
+          </h3>
+          <p class="timeline-text">
+            Abgeschlossene Berufsausbildung zur Fachkraft für
+            Lebensmitteltechnik bei Kaufland Fleischwaren im Jahr 2018, mit
+            anschließender Übernahme.
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">2020-2022</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">
+            Umschulung: Fachinformatiker Anwendungsentwicklung
+          </h3>
+          <p class="timeline-text">
+            Linux, Powershell, Webentwicklung, Wissensvermittlung
+          </p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">2022-2024</span>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Trainer für Fachinformatiker</h3>
+          <p class="timeline-text">
+            Übernahme nach Praktikum als IT-Trainer bei Lutz & Grub: Academy™️.
+            Schwerpunkt auf Webentwicklung, Linux und UML. Unterricht mit
+            Leidenschaft.
+          </p>
+        </div>
+      </li>
+    </ul>
   </section>
-  <section>
-    <h2>Learn more</h2>
-    <p>
-      To learn more about Astro, visit the
-      <a href="https://docs.astro.build">official documentation</a>.
-    </p>
+  <section class="project-cards" id="projects">
+    <ul>
+      <li class="card">
+        <img
+          src="https://picsum.photos/seed/42/200/200?random=1&blur"
+          alt="demo"
+        />
+        <h4 class="card-title">Project 1</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+          incidunt!
+        </p>
+        <button>GO</button>
+      </li>
+      <li class="card">
+        <img
+          src="https://picsum.photos/seed/42/200/200?random=2&blur"
+          alt="demo"
+        />
+        <h4 class="card-title">Project 2</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+          incidunt!
+        </p>
+        <button>GO</button>
+      </li>
+      <li class="card">
+        <img
+          src="https://picsum.photos/seed/42/200/200?random=3&blur"
+          alt="demo"
+        />
+        <h4 class="card-title">Project 3</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+          incidunt!
+        </p>
+        <button>GO</button>
+      </li>
+    </ul>
   </section>
 </MainLayout>
+
+<style>
+  /* Nav */
+  /* nav {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 5vh;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 2rem;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-right: 1rem;
+  }
+
+  nav ul li:not(:last-child)::after {
+    content: " |";
+    margin-left: 1rem;
+    color: var(--secondary-color);
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 0 0 2px var(--secondary-color);
+    transition: all 0.5s;
+  }
+
+  nav ul li:hover a {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px white;
+    margin-top: 10px;
+  }
+
+  main {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+  }
+
+  main * {
+    transition: all 0.5s;
+  } */
+
+  section {
+    min-height: 100vh;
+    background-size: cover;
+    padding-top: 1rem;
+    padding-inline: 2rem;
+    justify-content: center;
+  }
+
+  section.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.skills > ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  section.skills > ul > li {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  section.skills > ul > li .skill-shadow {
+    background-color: rgba(102, 102, 102, 0.2);
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  section.skills > ul li .skill-bar {
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    font-style: italic;
+    color: #fff7fa;
+    text-shadow: 1px 1px 2px darkslategray;
+  }
+
+  section.skills > ul li .skill-bar > span.value::after {
+    content: " %";
+    font-size: 1.1em;
+  }
+
+  section.timeline {
+    font-size: 0.8em;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  .timeline-items {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    left: calc(50%);
+    list-style: none;
+  }
+
+  .timeline-item {
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    transform: scale(0.8);
+    list-style: none;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+  }
+
+  .timeline-dot {
+    left: calc(50% - 9px);
+    top: 10px;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow:
+      0 0 25px var(--primary-color),
+      0 0 50px var(--primary-color);
+  }
+
+  .timeline-date {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 10px 40px 0;
+  }
+
+  .timeline-content {
+    background-color: var(--background-color);
+    border: 3px solid var(--primary-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .timeline-content:hover {
+    box-shadow: 0 0 25px var(--primary-color);
+    transform: scale(1.05);
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 10px 0;
+  }
+
+  .timeline-content p {
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+  }
+
+  section.project-cards {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.project-cards ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+  }
+
+  section.project-cards ul li {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px var(--primary-color);
+    max-width: 400px;
+  }
+
+  section.project-cards ul li:hover {
+    transform: translateY(-1rem) translateX(0.2rem);
+    box-shadow: 4px 4px 10px var(--secondary-color);
+  }
+
+  section.project-cards ul li img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+
+  section.project-cards ul li *:not(img) {
+    margin-inline: 1rem;
+  }
+
+  section.project-cards ul li :last-child {
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: rgba(255, 19, 137, 0.8);
+    font-weight: 700;
+    font-size: 1em;
+  }
+
+  section.project-cards ul li :last-child:hover {
+    background-color: rgba(255, 19, 137, 1);
+  }
+
+  /* Media */
+
+  @media screen and (max-width: 1100px) {
+    main > section.hero#hero {
+      grid-template-columns: 0.5fr 1fr;
+    }
+    section.hero .hero-text {
+      font-size: 1em;
+    }
+    section.hero .hero-text p {
+      width: 30ch;
+    }
+    .hero img {
+      max-width: 300px;
+    }
+  }
+  @media screen and (max-width: 840px) {
+    section.hero .hero-text {
+      font-size: 0.9em;
+    }
+    section.hero .hero-text h1 {
+      font-size: 2.5em;
+    }
+    section.hero .hero-text h2 {
+      font-size: 1.5em;
+    }
+    section.hero .hero-text p {
+      width: 25ch;
+    }
+    section.hero img {
+      max-width: 100%;
+    }
+
+    section.project-cards ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    section.project-cards ul li {
+      width: 300px;
+    }
+  }
+</style>

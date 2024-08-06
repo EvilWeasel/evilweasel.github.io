@@ -13,10 +13,10 @@ import "src/utils/base.css";
     <link rel="stylesheet" href="/fonts/font-faces.css" />
   </head>
   <body class="dark:bg-slate-600 bg-slate-200 flex">
-    <header class="px-3 mt-2 md:min-w-[180px]">
+    <header class="px-3 mt-2 md:min-w-[180px] sticky top-0">
       <Navbar />
     </header>
-    <main class="mt-12 p-4">
+    <main class="mt-12 p-4 min-w-[80%]">
       <slot />
       <footer>
         <p>© 2024 Astro</p>
@@ -24,6 +24,22 @@ import "src/utils/base.css";
     </main>
   </body>
 </html>
+
+<style is:global>
+  :root {
+    /* Dark-Mode with deep-magenta primary color and purple secondary color */
+    --primary-color: #8d1cf7;
+    --secondary-color: #fc0db0;
+    --background-color: #121212;
+  }
+  .text-accent {
+    color: var(--secondary-color);
+  }
+  .text-primary {
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px darkslategray;
+  }
+</style>
 
 <script is:inline>
   const theme = (() => {

@@ -1,9 +1,19 @@
 <section class="hero" id="hero">
   <div class="hero-text">
-    <h2 class="text-accent">Hi, ich bin</h2>
-    <h1>Tobias Wehrle</h1>
-    <h2 class="text-primary">Developer; Trainer; Gamer;</h2>
-    <p>
+    <h2
+      class="text-fuchsia-500 text-shadow-sm shadow-slate-500 dark:text-fuchsia-500 dark:shadow-black dark:text-shadow-sm"
+    >
+      Hi, ich bin
+    </h2>
+    <h1 class="dark:shadow-black text-shadow-sm">Tobias Wehrle</h1>
+    <h2
+      class="text-purple-800 text-shadow-sm shadow-fuchsia-600 dark:text-purple-700 dark:shadow-black"
+    >
+      Developer; Trainer; Gamer;
+    </h2>
+    <p
+      class="text-shadow-sm shadow-slate-100 dark:text-slate-200 dark:shadow-black"
+    >
       Leidenschaftlicher Beibringer von Wissen und Programmierer. In meiner Welt
       verschmelzen Technologie und Bildung zu einzigartigen Erlebnissen. Stets
       auf der Suche nach neuen Herausforderungen und Wegen, um Wissen
@@ -30,17 +40,23 @@
     display: flex;
     flex-direction: column;
     font-size: 0.8rem;
+    line-height: normal;
     width: 100%;
     max-width: 70ch;
     min-width: 40ch;
   }
-  /*   @media (min-width: 768px) {
-    .text-lg {
-      font-size: 1.125rem ;
-      line-height: 1.75rem ;
+  @media (min-width: 940px) {
+    section.hero .hero-text {
+      font-size: 1.1rem;
+      line-height: 1.1rem;
     }
-  } */
-
+  }
+  @media (min-width: 1250px) {
+    section.hero .hero-text {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+    }
+  }
   section.hero .hero-text h1,
   h2 {
     margin: 0 auto;
@@ -83,7 +99,7 @@
     max-height: 100%;
     max-width: 500px;
     object-fit: contain;
-    border-radius: 15px;
+    border-radius: 50%;
     min-width: 200px;
     width: 100%;
     flex-shrink: 1;

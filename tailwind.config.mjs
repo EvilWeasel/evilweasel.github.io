@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,8 +13,25 @@ export default {
         written: ["MonaspaceRadon", ...defaultTheme.fontFamily.sans],
         neon: ["MonaspaceNeon", ...defaultTheme.fontFamily.sans],
       },
+      // text shadow
+      textShadow: {
+        sm: "1px 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "2px 2px 4px var(--tw-shadow-color)",
+        lg: "8px 8px 16px var(--tw-shadow-color)",
+      },
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };

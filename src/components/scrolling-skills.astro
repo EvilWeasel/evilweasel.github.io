@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { IconMap } from "src/utils/IconMap";
+import { SkillList } from "src/utils/IconMap";
+---
+
+<!-- <ul class="flex gap-6 overflow-hidden">
+  {
+    // iterate through SkillMap
+    // and render a list item for each skill
+    SkillList.map((skill) => (
+      <li class="flex items-center border-slate-200 border-2 rounded-md p-2 w-[30ch] min-w-fit">
+        <Icon name={skill.icon} size={32} />
+        <div class="pl-4 flex flex-col justify-center">
+          <h3 class="m-0 p-2 text-md">{skill.name}</h3>
+          <p class="m-0 p-2 text-sm">{skill.description}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul> -->
+<ul class="scrolling-container flex gap-6 overflow-hidden">
+  {
+    // iterate through SkillMap
+    // and render a list item for each skill
+    SkillList.map((skill) => (
+      <li class="scrolling-item flex items-center border-slate-200 border-2 rounded-md p-2 w-[30ch]">
+        <Icon name={skill.icon} size={32} />
+        <div class="pl-4 flex flex-col justify-center">
+          <h3 class="m-0 px-2 text-md">{skill.name}</h3>
+          <p class="m-0 px-2 text-sm">{skill.description}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .scrolling-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .scrolling-item {
+    flex-shrink: 0;
+    animation: scroll 15s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 2));
+    }
+  }
+</style>

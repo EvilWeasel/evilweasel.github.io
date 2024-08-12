@@ -1,10 +1,13 @@
 ---
+import { Icon } from "astro-icon/components";
 import Skill from "./skill.astro";
-const skillColor = "rgb(217 70 239)";
+import ScrollingSkills from "./scrolling-skills.astro";
+const skillColor = "rgb(217 120 239)";
 ---
 
 <section>
   <h1 class="text-3xl text-shadow-sm shadow-black">Meine Fähigkeiten</h1>
+  <ScrollingSkills />
   <div class="skills">
     <ul>
       <Skill title="Web-Development" value={70} color={skillColor} />

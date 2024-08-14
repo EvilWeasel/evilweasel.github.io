@@ -3,37 +3,47 @@ import { Icon } from "astro-icon/components";
 import ThemeToggle from "./theme-toggle.astro";
 ---
 
-<nav class="flex flex-col items-center">
-  <div class="py-5">
-    <img
-      class="rounded-[50%] shadow-lg"
-      src="https://picsum.photos/100/100"
-      alt="PB"
-    />
+<nav class="flex flex-col justify-center">
+  <div class="flex flex-col items-center">
+    <div class="py-5">
+      <img class="rounded-[50%] shadow-lg" src="/me.png" alt="PB" />
+    </div>
+    <div class="mb-6">
+      <ThemeToggle />
+    </div>
+    <ul class="w-full">
+      <li>
+        <a href="/#hero">Home</a>
+      </li>
+      <li>
+        <a href="/#skills">Skills</a>
+      </li>
+      <li>
+        <a href="/#timeline">Lebenslauf</a>
+      </li>
+      <li>
+        <a href="/#projects">Projekte</a>
+      </li>
+      <li>
+        <a href="https://evilweasel.github.io/docs">Meine Dokumente</a>
+      </li>
+    </ul>
   </div>
-  <div class="mb-6">
-    <ThemeToggle />
-  </div>
-  <ul class="w-full">
-    <li>
-      <a href="/#hero">Home</a>
-    </li>
-    <li>
-      <a href="/#skills">Skills</a>
-    </li>
-    <li>
-      <a href="/#timeline">Lebenslauf</a>
-    </li>
-    <li>
-      <a href="/#projects">Projekte</a>
-    </li>
-    <li>
-      <a href="https://evilweasel.github.io/docs">Meine Dokumente</a>
-    </li>
-  </ul>
 </nav>
 
 <style>
+  nav {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+
+  nav > div {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
   ul li {
     margin: 0.5rem;
     border-radius: 1rem;

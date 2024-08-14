@@ -1,0 +1,72 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  link: string;
+  tags: string[];
+  status?: "online";
+}
+let githubPrefix = "https://github.com/evilweasel/";
+let projectList: Array<Project> = [
+  {
+    title: "Mein Portfolio",
+    description: "Eine Übersicht zu meiner Fähigkeiten und meiner Projekte.",
+    link: `${githubPrefix}evilweasel.github.io`,
+    tags: ["astro", "tailwindcss", "iconify"],
+    status: "online",
+  },
+  {
+    title: "EvilDocs",
+    description:
+      "Website mit meinen Unterrichtsmaterialien. Open-Source Teaching.",
+    link: `${githubPrefix}docs`,
+    tags: ["astro", "starlight", "tailwindcss", "mdx", "react"],
+    status: "online",
+  },
+  {
+    title: "LBX - Learn By Example",
+    description:
+      "Ein Lernprojekt, welches ich nutzte um React, NextJS und TailwindCSS zu lernen. Basically ein Udemy Clone.",
+    link: `${githubPrefix}lbx`,
+    tags: [
+      "nextjs",
+      "tailwindcss",
+      "react",
+      "mux",
+      "vercel",
+      "shadcn",
+      "uploadthing",
+      "clerk",
+    ],
+  },
+];
+---
+
+<section class="project-cards" id="projects">
+  <ul>
+    {
+      projectList.map((project) => (
+        <li class="border-purple-700 border-2 rounded-xl p-4 shadow-md shadow-purple-400 relative">
+          {project.status && (
+            <span class="absolute top-2 right-2 bg-slate-700 text-green-300 p-1 rounded-lg">
+              {project.status}
+            </span>
+          )}
+
+          <h2>{project.title}</h2>
+          <p class="mb-2">{project.description}</p>
+          <a href={project.link} class="text-fuchsia-400">
+            GitHub
+          </a>
+          <ul class="flex gap-4 mt-2 flex-wrap">
+            {project.tags.map((tag) => (
+              <li class="border border-purple-600 rounded-xl p-1 dark:shadow-fuchsia-500 bg-opacity-70 bg-slate-700 mb-0 hover:scale-105 hover:shadow-md transition-all">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+</section>

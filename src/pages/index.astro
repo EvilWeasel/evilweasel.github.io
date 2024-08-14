@@ -1,103 +1,23 @@
 ---
 import Hero from "@/components/hero.astro";
+import ProjectCards from "@/components/project-cards.astro";
 import Skills from "@/components/skills.astro";
 import Timeline from "@/components/timeline.astro";
 import MainLayout from "@/layouts/main-layout.astro";
 ---
 
-<MainLayout class:list={"test"}>
+<MainLayout>
   <Hero />
   <Skills />
   <Timeline />
-  <section class="project-cards" id="projects">
-    <ul>
-      <li class="card">
-        <img
-          src="https://picsum.photos/seed/42/200/200?random=1&blur"
-          alt="demo"
-        />
-        <h4 class="card-title">Project 1</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          incidunt!
-        </p>
-        <button>GO</button>
-      </li>
-      <li class="card">
-        <img
-          src="https://picsum.photos/seed/42/200/200?random=2&blur"
-          alt="demo"
-        />
-        <h4 class="card-title">Project 2</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          incidunt!
-        </p>
-        <button>GO</button>
-      </li>
-      <li class="card">
-        <img
-          src="https://picsum.photos/seed/42/200/200?random=3&blur"
-          alt="demo"
-        />
-        <h4 class="card-title">Project 3</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          incidunt!
-        </p>
-        <button>GO</button>
-      </li>
-    </ul>
-  </section>
+  <ProjectCards />
 </MainLayout>
 
 <style>
   .test > * {
-    margin-bottom: 10rem;
+    margin-bottom: 100rem;
   }
-  /* Nav */
-  /* nav {
-    display: flex;
-    position: absolute;
-    z-index: 10;
-    width: 100vw;
-    height: 5vh;
-    padding: 2rem 2rem;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 2rem;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin-right: 1rem;
-  }
-
-  nav ul li:not(:last-child)::after {
-    content: " |";
-    margin-left: 1rem;
-    color: var(--secondary-color);
-  }
-
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    text-shadow: 0 0 2px var(--secondary-color);
-    transition: all 0.5s;
-  }
-
-  nav ul li:hover a {
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px white;
-    margin-top: 10px;
-  }
+  /* 
 
   main {
     position: fixed;

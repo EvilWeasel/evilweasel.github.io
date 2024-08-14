@@ -1,72 +1,131 @@
+---
+// function to create pseudo-commit id with length 40
+function createCommitId(): String {
+  return Array.from({ length: 40 }, () =>
+    Math.floor(Math.random() * 16).toString(16)
+  ).join("");
+}
+// function to covert date to git format like "Mon Aug 5 20:01:57 2024 +0200"
+function formatDate(date: Date): String {
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const dayOfWeek = daysOfWeek[date.getUTCDay()];
+  const month = months[date.getUTCMonth()];
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const hours = String(date.getUTCHours()).padStart(2, "0");
+  const minutes = String(date.getUTCMinutes()).padStart(2, "0");
+  const seconds = String(date.getUTCSeconds()).padStart(2, "0");
+  const year = date.getUTCFullYear();
+
+  const timezoneOffset = -date.getTimezoneOffset();
+  const timezoneSign = timezoneOffset >= 0 ? "+" : "-";
+  const timezoneHours = String(
+    Math.abs(Math.floor(timezoneOffset / 60))
+  ).padStart(2, "0");
+  const timezoneMinutes = String(Math.abs(timezoneOffset % 60)).padStart(
+    2,
+    "0"
+  );
+  const timezone = `${timezoneSign}${timezoneHours}${timezoneMinutes}`;
+
+  return `${dayOfWeek} ${month} ${day} ${hours}:${minutes}:${seconds} ${year} ${timezone}`;
+}
+let init = {
+  commit: createCommitId(),
+  author: "Anke Wehrle",
+  CoAuthoredBy: "Markus Wehrle",
+  date: formatDate(new Date("1998-06-22")),
+  message: 'Initialisierung von "Tobias Wehrle" in Heilbronn.',
+};
+let timeline = [
+  {
+    date: "2014-2015",
+    title: "Realschulabschluss",
+    text: "Linux; Gaming; Orientierungssuche;",
+  },
+  {
+    date: "2014-2015",
+    title: "FSJ beim ASB",
+    text: "Freiwilliges Soziales Jahr beim Arbeiter-Samariter-Bund. Betreuung von Kindern mit Behinderung.",
+  },
+  {
+    date: "2015-2020",
+    title: "Ausbildung: Fachkraft Lebensmitteltechnik",
+    text: "Abgeschlossene Berufsausbildung zur Fachkraft für Lebensmitteltechnik bei Kaufland Fleischwaren im Jahr 2018, mit anschließender Übernahme. Schwerpunkt auf Qualitätssicherung und Hygiene.",
+  },
+  {
+    date: "2020-2022",
+    title: "Umschulung: Fachinformatiker Anwendungsentwicklung",
+    text: "Linux, Powershell, Webentwicklung, Wissensvermittlung. Erfolgreicher Abschluss der Umschulung bei der Lutz & Grub: Academy™️.",
+  },
+  {
+    date: "2022-2024",
+    title: "Trainer für Fachinformatiker",
+    text: "Übernahme nach Praktikum als IT-Trainer bei Lutz & Grub: Academy™️. Schwerpunkt auf Webentwicklung, Linux und UML. Zusätzlich externe Schulungen zu Powershell. Unterricht mit Leidenschaft und Engagement.",
+  },
+  {
+    date: "2024-tbd",
+    title: "Meine Berufliche Zukunft",
+    text: "Hier könnte Ihr Unternehmen stehen. Ich freue mich auf neue Herausforderungen und spannende Projekte.",
+  },
+];
+---
+
 <section class="timeline" id="timeline">
+  <div class="init">
+    <p><em class="text-yellow-500">Commit {init.commit}</em></p>
+    <p>Author: {init.author}</p>
+    <p>Date: {init.date}</p>
+    <p>Co-Authored-By: {init.CoAuthoredBy}</p>
+    <div class="w-full border-b-2 mb-3 border-fuchsia-500"></div>
+    <p>{init.message}</p>
+  </div>
   <ul class="timeline-items">
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">1998</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">Initialisierung</h3>
-        <p class="timeline-text">Geburt in Heilbronn</p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">2014-2015</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">Realschulabschluss</h3>
-        <p class="timeline-text">Linux; Gaming; Orientierungssuche;</p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">2014-2015</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">FSJ beim ASB</h3>
-        <p class="timeline-text">
-          Freiwilliges Soziales Jahr beim Arbeiter-Samariter-Bund
-        </p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">2015-2020</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">
-          Ausbildung: Fachkraft Lebensmitteltechnik
-        </h3>
-        <p class="timeline-text">
-          Abgeschlossene Berufsausbildung zur Fachkraft für Lebensmitteltechnik
-          bei Kaufland Fleischwaren im Jahr 2018, mit anschließender Übernahme.
-        </p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">2020-2022</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">
-          Umschulung: Fachinformatiker Anwendungsentwicklung
-        </h3>
-        <p class="timeline-text">
-          Linux, Powershell, Webentwicklung, Wissensvermittlung
-        </p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <span class="timeline-date">2022-2024</span>
-      <div class="timeline-content">
-        <h3 class="timeline-title">Trainer für Fachinformatiker</h3>
-        <p class="timeline-text">
-          Übernahme nach Praktikum als IT-Trainer bei Lutz & Grub: Academy™️.
-          Schwerpunkt auf Webentwicklung, Linux und UML. Unterricht mit
-          Leidenschaft.
-        </p>
-      </div>
-    </li>
+    {
+      timeline.map((item, index) => (
+        <li class="timeline-item">
+          <div class="timeline-dot" />
+          <span class="timeline-date">{item.date}</span>
+          <div class="timeline-content">
+            <h3 class="timeline-title">{item.title}</h3>
+            <p class="timeline-text">{item.text}</p>
+          </div>
+        </li>
+      ))
+    }
   </ul>
 </section>
 
 <style>
+  .init {
+    font-size: 0.8rem;
+    border: 3px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 2rem 2rem 2rem 0rem;
+    box-shadow: 0 0 10px var(--primary-color);
+    background-color: var(--background-color);
+    max-width: 1300px;
+  }
+  .init p {
+    margin-bottom: 0.5rem;
+  }
+  .init p:last-child {
+    margin-bottom: 0;
+  }
   section.timeline {
     font-size: 0.8em;
     padding: 2rem;
@@ -77,7 +136,6 @@
   }
 
   .timeline-items {
-    max-width: 1300px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -90,33 +148,30 @@
     width: 5px;
     height: 100%;
     background-color: var(--primary-color);
-    left: calc(50%);
+    left: 0;
     list-style: none;
   }
 
   .timeline-item {
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
     width: 100%;
     position: relative;
-    transform: scale(0.8);
     list-style: none;
+  }
+
+  .timeline-item:first-child {
+    margin-top: 1rem;
   }
 
   .timeline-item:last-child {
     margin-bottom: 0;
-  }
-
-  .timeline-item:nth-child(odd) {
-    padding-right: calc(50% + 30px);
-    text-align: right;
-  }
-
-  .timeline-item:nth-child(even) {
-    padding-left: calc(50% + 30px);
+    border: none;
   }
 
   .timeline-dot {
-    left: calc(50% - 9px);
+    /* calc left 0 - half of dot-width + half of timeline::before - ml of timeline-item */
+    left: calc(0px - 12px + 2px - 2rem);
     top: 10px;
     position: absolute;
     height: 24px;
@@ -144,6 +199,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    max-width: 1300px;
   }
 
   .timeline-content:hover {
@@ -152,14 +208,14 @@
   }
 
   .timeline-content h3 {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 700;
     color: white;
     margin: 0 0 10px 0;
   }
 
   .timeline-content p {
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: 300;
     color: white;
     margin: 0;

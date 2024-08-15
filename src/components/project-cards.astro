@@ -11,6 +11,7 @@ interface Project {
   tags: Tag[];
   status?: "online";
   deployment?: string;
+  attribution?: string;
 }
 
 const allTags = {
@@ -70,27 +71,24 @@ let githubPagesPrefix = "https://evilweasel.github.io/";
 let projectList: Array<Project> = [
   {
     title: "Mein Portfolio",
-    description: "Eine Übersicht zu meiner Fähigkeiten und meiner Projekte.",
+    description:
+      "Die Seite, welche du dir gerade anschaust. Eine Übersicht zu meiner Person, meinen Fähigkeiten und interessanten Projekten.",
     link: `${githubPrefix}evilweasel.github.io`,
-    tags: [
-      allTags.astro,
-      { name: "tailwindcss", link: "https://tailwindcss.com/" },
-      { name: "iconify", link: "https://iconify.design/" },
-    ],
+    tags: [allTags.astro, allTags.tailwindcss, allTags.iconify],
     status: "online",
     deployment: githubPagesPrefix,
   },
   {
     title: "EvilDocs",
     description:
-      "Website mit meinen Unterrichtsmaterialien. Open-Source Teaching.",
+      "Die Website auf der ich meine Unterrichtsmaterialien veröffentliche. Kostenlos und Open-Source. Meine Materialien werden als Markdown- oder MDX-Dateien in einem Obsidian-Vault erstellt. Astro-Starlight wandelt diese Dokumente zur Build-Time in HTML-Seiten um.",
     link: `${githubPrefix}docs`,
     tags: [
-      { name: "astro", link: "https://astro.build/" },
-      { name: "starlight", link: "https://starlight.astro.build/" },
-      { name: "tailwindcss", link: "https://tailwindcss.com/" },
-      { name: "mdx", link: "https://mdxjs.com/" },
-      { name: "react", link: "https://react.dev/?uwu=true" },
+      allTags.astro,
+      allTags.starlight,
+      allTags.tailwindcss,
+      allTags.mdx,
+      allTags.react,
     ],
     status: "online",
     deployment: `${githubPagesPrefix}docs`,
@@ -98,18 +96,19 @@ let projectList: Array<Project> = [
   {
     title: "LBX - Learn By Example",
     description:
-      "Ein Lernprojekt, welches ich nutzte um React, NextJS und TailwindCSS zu lernen. Basically ein Udemy Clone.",
+      "Ein Lernprojekt, welches ich erstellt habe um React, NextJS und TailwindCSS zu lernen. Basically ein Udemy Clone. Die Videos werden von Mux gestreamt, die Static-Files auf UploadThing hochgeladen und die Authentifizierung läuft über Clerk.",
     link: `${githubPrefix}lbx`,
     tags: [
-      { name: "nextjs", link: "https://nextjs.org/" },
-      { name: "tailwindcss", link: "https://tailwindcss.com/" },
-      { name: "react", link: "https://reactjs.org/" },
-      { name: "mux", link: "https://www.mux.com/" },
-      { name: "vercel", link: "https://vercel.com/" },
-      { name: "shadcn", link: "https://shadcn.dev/" },
-      { name: "uploadthing", link: "https://uploadthing.com/" },
-      { name: "clerk", link: "https://clerk.dev/" },
+      allTags.nextjs,
+      allTags.tailwindcss,
+      allTags.react,
+      allTags.mux,
+      allTags.vercel,
+      allTags.shadcn,
+      allTags.uploadthing,
+      allTags.clerk,
     ],
+    attribution: "https://www.youtube.com/watch?v=Big_aFLmekI",
   },
 ];
 ---
@@ -118,7 +117,7 @@ let projectList: Array<Project> = [
   <ul>
     {
       projectList.map((project) => (
-        <li class="border-purple-700 border-2 rounded-xl p-4 shadow-md shadow-purple-400 relative">
+        <li class="border-purple-700 border-2 rounded-xl p-4 hover:shadow-flat shadow-purple-400 relative m-3 transition-all">
           {project.status && (
             <span class="absolute top-2 right-2 bg-slate-700 text-green-300 p-1 rounded-lg bg-opacity-50">
               {project.status}
@@ -129,23 +128,24 @@ let projectList: Array<Project> = [
           <div class="link-container">
             <a
               href={project.link}
-              class="text-fuchsia-400 mb-3 inline-block hover:text-shadow-sm transition-all"
+              class="text-fuchsia-400 mb-3 inline-block hover:text-shadow-sm transition-all content-start"
             >
               Zum Source Code auf GitHub
             </a>
-            <br />
-            <a
-              href={project.deployment}
-              class="text-green-400 mb-3 inline-block hover:text-shadow-sm transition-all"
-            >
-              Schau dir das Projekt an
-            </a>
+            {project.deployment && (
+              <a
+                href={project.deployment}
+                class="text-green-400 mb-3 inline-block hover:text-shadow-sm transition-all content-end"
+              >
+                Schau dir das Projekt live an
+              </a>
+            )}
           </div>
 
-          <ul class="flex gap-4 mt-2 mb-auto flex-wrap min-h-12">
+          <ul class="flex gap-3 mt-2 mb-auto flex-wrap min-h-12 hover:z-20 mx-2 has-[:hover]:mx-0 transition-all duration-300">
             {project.tags.map((tag) => (
               <a href={tag.link} target="_blank">
-                <li class="border border-purple-600 rounded-xl p-1 dark:shadow-fuchsia-500 bg-opacity-70 bg-slate-700 mb-0 hover:scale-105 hover:shadow-md transition-all mx-auto ">
+                <li class="border border-purple-600 rounded-xl px-2 py-1 dark:shadow-fuchsia-500 bg-opacity-70 bg-slate-700 mb-0 hover:scale-125 hover:shadow-lg  mx-auto font-mono transition-all duration-300">
                   {tag.name}
                 </li>
               </a>
@@ -158,6 +158,20 @@ let projectList: Array<Project> = [
 </section>
 
 <style>
+  @keyframes vars {
+    0% {
+      font-variation-settings:
+        "wght" 400,
+        "wdth" 100,
+        "slnt" 0;
+    }
+    100% {
+      font-variation-settings:
+        "wght" 700,
+        "wdth" 100,
+        "slnt" -11;
+    }
+  }
   @media only screen and (max-width: 768px) {
     ul li h2 {
       font-size: 1em;
@@ -168,22 +182,21 @@ let projectList: Array<Project> = [
     }
   }
   section ul li a {
-    font-variation-settings:
-      "wght" 400,
-      "wdth" 100,
-      "slnt" 0;
     font-size: 1em;
   }
   section ul li a:hover {
-    font-variation-settings:
-      "wght" 700,
-      "wdth" 100,
-      "slnt" -11;
     font-size: 1.1em;
+    animation: vars 0.2s forwards alternate;
   }
-  .link-container a,
-  .link-container {
-    min-height: 40px;
+  .link-container a {
+    min-height: 25px;
     margin: 0 0 auto 0;
+  }
+  .link-container {
+    max-height: fit-content;
+    height: 60px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
   }
 </style>

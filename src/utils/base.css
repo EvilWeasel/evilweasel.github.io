@@ -29,12 +29,12 @@
   h2 {
     @apply text-xl;
   }
-  ul li a {
+  ul > li > a {
     @apply font-sans;
     font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0;
     transition: all 0.2s ease-out;
   }
-  ul li:hover a {
+  ul > li:hover > a {
     font-variation-settings: "wght" 800, "wdth" 105, "slnt" -6;
   }
   p,
@@ -43,5 +43,12 @@
   }
   pre code {
     @apply font-mono;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  a[target="_blank"] {
+    @apply cursor-alias;
   }
 }

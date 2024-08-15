@@ -19,6 +19,9 @@ export default {
         DEFAULT: "2px 2px 4px var(--tw-shadow-color)",
         lg: "8px 8px 16px var(--tw-shadow-color)",
       },
+      boxShadow: {
+        flat: "0px 0px 10px var(--tw-shadow-color)",
+      },
     },
   },
   darkMode: "class",

@@ -25,32 +25,32 @@ export const Navbar = () => {
           <ul>
             <li className="my-5 mx-0 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-800">
               <a
-                href="/#hero"
-                className="p-4 inline-block w-full h-full  mx-auto my-0"
+                href="#hero"
+                className="p-4 inline-block w-full h-full mx-auto my-0"
               >
                 Home
               </a>
             </li>
             <li className="my-5 mx-0 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-800">
               <a
-                href="/#skills"
-                className="p-4 inline-block w-full h-full  mx-auto my-0"
+                href="#skills"
+                className="p-4 inline-block w-full h-full mx-auto my-0"
               >
                 Skills
               </a>
             </li>
             <li className="my-5 mx-0 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-800">
               <a
-                href="/#projects"
-                className="p-4 inline-block w-full h-full  mx-auto my-0"
+                href="#projects"
+                className="p-4 inline-block w-full h-full mx-auto my-0"
               >
                 Projekte
               </a>
             </li>
             <li className="my-5 mx-0 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-800">
               <a
-                href="/#timeline"
-                className="p-4 inline-block w-full h-full  mx-auto my-0"
+                href="#timeline"
+                className="p-4 inline-block w-full h-full mx-auto my-0"
               >
                 Lebenslauf
               </a>

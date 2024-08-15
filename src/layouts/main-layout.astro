@@ -14,7 +14,7 @@ import "src/utils/base.css";
   </head>
   <body class="dark:bg-slate-900 bg-slate-300">
     <header class="px-3 mt-2 sticky top-0">
-      <Navbar client:idle />
+      <Navbar client:load />
     </header>
     <main class="mt-12 p-4 w-full">
       <slot />
@@ -28,6 +28,7 @@ import "src/utils/base.css";
     --primary-color: #8d1cf7;
     --secondary-color: #fc0db0;
     --background-color: #121212;
+    scroll-behavior: smooth;
   }
   .text-accent {
     color: var(--secondary-color);
@@ -37,11 +38,12 @@ import "src/utils/base.css";
     text-shadow: 1px 1px 2px darkslategray;
   }
   section {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     scroll-snap-align: start;
+    scroll-behavior: smooth;
     max-width: 1300px;
     overflow-x: auto;
   }

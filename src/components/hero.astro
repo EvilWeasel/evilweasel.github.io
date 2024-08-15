@@ -31,22 +31,17 @@
     gap: 2rem;
     justify-content: center;
     width: 100%;
+    overflow-x: hidden;
   }
 
   section.hero .hero-text {
     display: flex;
     flex-direction: column;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.2rem;
     width: 100%;
     max-width: 70ch;
     min-width: 40ch;
-  }
-  @media (min-width: 940px) {
-    section.hero .hero-text {
-      font-size: 1.1rem;
-      line-height: 1.5rem;
-    }
   }
   @media (min-width: 1250px) {
     section.hero .hero-text {
@@ -100,5 +95,13 @@
     min-width: 200px;
     width: 100%;
     flex-shrink: 1;
+  }
+  @media only screen and (max-width: 1024px) {
+    section.hero {
+      grid-template-columns: 1fr;
+    }
+    section.hero img {
+      grid-row: 1;
+    }
   }
 </style>

@@ -1,4 +1,4 @@
-export interface Skill {
+export interface SkillType {
   name: string;
   icon: string;
   description: string;
@@ -19,7 +19,7 @@ export const IconMap = {
 };
 
 // skill map skill: { name: string, icon: string, description: string }
-export const SkillList: Array<Skill> = [
+export const SkillList: Array<SkillType> = [
   {
     name: "Arch Linux",
     icon: IconMap.arch,

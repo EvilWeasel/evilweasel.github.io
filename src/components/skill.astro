@@ -7,8 +7,8 @@ interface Props {
 const { title, value, color } = Astro.props;
 ---
 
-<li>
-  <h3>{title}</h3>
+<li class="lg:basis-[45%] basis-[80%]">
+  <h3 class="truncate">{title}</h3>
   <div class="skill-shadow">
     <div
       class="skill-bar"
@@ -25,7 +25,6 @@ const { title, value, color } = Astro.props;
 
 <style>
   li {
-    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;

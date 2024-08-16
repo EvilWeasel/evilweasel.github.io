@@ -49,6 +49,7 @@ export const Navbar = () => {
             </li>
             <li className="my-5 mx-0 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-800">
               <a
+                target="_self"
                 href="#timeline"
                 className="p-4 inline-block w-full h-full mx-auto my-0"
               >

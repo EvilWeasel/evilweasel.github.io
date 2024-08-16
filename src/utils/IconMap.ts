@@ -45,6 +45,9 @@ export const SkillList: Array<SkillType> = [
     icon: IconMap.markdown,
     description: "The content on my Website is written in MDX.",
   },
+];
+
+export const SkillList2: Array<SkillType> = [
   {
     name: "MySQL",
     icon: IconMap.mysql,

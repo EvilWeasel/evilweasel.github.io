@@ -73,6 +73,7 @@ const Carousel = React.forwardRef<
       [
         AutoScroll({
           playOnInit: autoPlay,
+          speed: 0.5,
           ...autoplayOpts,
         }),
         ...(plugins || []),

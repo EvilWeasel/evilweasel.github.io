@@ -118,11 +118,9 @@ let projectList: Array<Project> = [
     {
       projectList.map((project) => (
         <li class="border-purple-700 border-2 rounded-xl p-4 hover:shadow-flat shadow-purple-400 relative m-3 transition-all">
-          {project.status && (
-            <span class="absolute top-2 right-2 bg-slate-700 text-green-300 p-1 rounded-lg bg-opacity-50">
-              {project.status}
+            <span class={`absolute top-2 right-2 bg-slate-700 p-1 rounded-lg bg-opacity-50 ${project.status ? "text-green-300" : "text-red-300"}`}>
+              {project.status ?? "offline"}
             </span>
-          )}
           <h2>{project.title}</h2>
           <p class="mb-2">{project.description}</p>
           <div class="link-container">

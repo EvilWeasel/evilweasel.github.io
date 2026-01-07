@@ -1,5 +1,5 @@
 ---
-import { Navbar } from "@/components/navbar.tsx";
+import { Navbar } from "@/components/navbar";
 import "src/utils/base.css";
 ---
 
@@ -9,7 +9,7 @@ import "src/utils/base.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>evilweasel.github.io/</title>
     <link rel="stylesheet" href="/fonts/font-faces.css" />
   </head>
   <body class="">
@@ -38,7 +38,7 @@ import "src/utils/base.css";
     text-shadow: 1px 1px 2px darkslategray;
   }
   section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +59,7 @@ import "src/utils/base.css";
     overflow-y: scroll;
     height: 100vh;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1250px) {
     body header {
       display: none;
     }

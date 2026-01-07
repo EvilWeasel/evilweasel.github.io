@@ -6,8 +6,10 @@ import { SkillList, SkillList2, type SkillType } from "@/utils/IconMap";
 import { SkillCard } from "./skill-card";
 
 export const ScrollingSkills = () => {
+  const carouselClnsAlt = "basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 ml-6";
+  const carouselClns = "basis-auto shrink-0 gap-3";
   return (
-    <div className="flex flex-col gap-y-6">
+    <div className="flex flex-col gap-y-6 max-w-[100%]">
       <Carousel
         autoPlay={true}
         opts={{ loop: true }}
@@ -22,7 +24,7 @@ export const ScrollingSkills = () => {
       >
         <CarouselContent>
           {SkillList.map((skill: SkillType, index) => (
-            <CarouselItem className="basis-1/4 ml-12" key={index}>
+            <CarouselItem className={carouselClns} key={index}>
               <SkillCard skill={skill} />
             </CarouselItem>
           ))}
@@ -43,7 +45,7 @@ export const ScrollingSkills = () => {
       >
         <CarouselContent>
           {SkillList2.map((skill: SkillType, index) => (
-            <CarouselItem className="basis-1/4 ml-12" key={index}>
+            <CarouselItem className={carouselClns} key={index}>
               <SkillCard skill={skill} />
             </CarouselItem>
           ))}

@@ -6,6 +6,7 @@ export interface SkillType {
 
 // Using devicons and mdi from iconify
 export const IconMap = {
+  nixos: "devicon-plain:nixos",
   arch: "devicon-plain:archlinux",
   csharp: "devicon-plain:csharp",
   bash: "devicon-plain:bash",
@@ -16,61 +17,84 @@ export const IconMap = {
   powershell: "devicon-plain:powershell",
   react: "mdi:react",
   astro: "devicon-plain:astro",
+  nextjs: "devicon-plain:nextjs",
 };
 
-// skill map skill: { name: string, icon: string, description: string }
 export const SkillList: Array<SkillType> = [
   {
     name: "Arch Linux",
     icon: IconMap.arch,
-    description: "I use Arch Linux as my daily driver.",
+    description:
+      "Über zehn Jahre mein tägliches Betriebssystem. Ich arbeite gerne nah am System und verstehe lieber, wie Dinge funktionieren.",
   },
   {
-    name: "C#",
-    icon: IconMap.csharp,
-    description: "I have experience with C# and Dotnet.",
-  },
-  {
-    name: "Bash",
-    icon: IconMap.bash,
-    description: "I have limited experience with Bash scripting.",
+    name: "NixOS",
+    icon: IconMap.nixos,
+    description:
+      "Aktuell mein Daily OS auf allen Geräten. Deklarative Konfiguration passt perfekt zu meinem Anspruch an reproduzierbare Systeme.",
   },
   {
     name: "Git",
     icon: IconMap.git,
-    description: "I use Git and GitHub almost daily.",
+    description:
+      "Fester Bestandteil meines Alltags in Entwicklung und Unterricht. Mir sind saubere Historien und nachvollziehbare, signierte Commits wichtig.",
   },
   {
-    name: "Markdown",
+    name: "Markdown / MDX",
     icon: IconMap.markdown,
-    description: "The content on my Website is written in MDX.",
+    description:
+      "Mein bevorzugtes Format für Dokumentation und Lernmaterialien. Klar strukturierte Inhalte und Ease-of-Use stehen für mich im Vordergrund.",
+  },
+  {
+    name: "Bash",
+    icon: IconMap.bash,
+    description:
+      "Eingesetzt für kleine Automatisierungen und Helfer-Skripte. Ich kenne die Grenzen und nutze es dort, wo es sinnvoll ist.",
   },
 ];
 
 export const SkillList2: Array<SkillType> = [
   {
+    name: "C#",
+    icon: IconMap.csharp,
+    description:
+      "Einsatz vor allem im Unterricht, mit Fokus auf OOP, saubere Strukturen und verständlichen Code.",
+  },
+  {
     name: "MySQL",
     icon: IconMap.mysql,
-    description: "I have experience with MySQL.",
+    description:
+      "Praxisnahe Erfahrung mit relationalem Datenbankdesign und SQL in Projekten und Lehre.",
   },
   {
     name: "Node.js",
     icon: IconMap.nodejs,
-    description: "I have experience with Node.js.",
+    description:
+      "Genutzt als Laufzeitumgebung für Backend-Services und kleinere Webprojekte.",
   },
   {
     name: "PowerShell",
     icon: IconMap.powershell,
-    description: "I have some experience with PowerShell.",
+    description:
+      "Vor allem im Trainingskontext sowie für Automatisierung und systemnahe Aufgaben.",
   },
   {
     name: "React",
     icon: IconMap.react,
-    description: "I have experience with Frontend-Frameworks like React.",
+    description:
+      "Erfahrung im Aufbau interaktiver Benutzeroberflächen mit komponentenbasiertem Ansatz.",
+  },
+  {
+    name: "Next.js",
+    icon: IconMap.nextjs,
+    description:
+      "Verwendet für Fullstack-Webanwendungen mit klarer Trennung von Frontend und Backend.",
   },
   {
     name: "Astro",
     icon: IconMap.astro,
-    description: "This Website is built with Astro.",
+    description:
+      "Mein bevorzugtes Tool für Content-lastige Websites, unter anderem dieses Portfolio und EvilDocs.",
   },
 ];
+

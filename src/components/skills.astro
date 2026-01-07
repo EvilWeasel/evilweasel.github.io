@@ -1,17 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
 import Skill from "./skill.astro";
-import { ScrollingSkills } from "./scrolling-skills.tsx";
+import { ScrollingSkills } from "./scrolling-skills";
 const skillColor = "rgb(217 120 239)";
 import { SkillList, type SkillType } from "@/utils/IconMap";
 ---
 
 <section id="skills">
-  <h1 class="text-3xl text-shadow-sm shadow-black">Meine Fähigkeiten</h1>
+  <h1 class="text-3xl text-shadow-sm shadow-black mb-0">Meine Fähigkeiten</h1>
   <ScrollingSkills client:only="react">
     {
       SkillList.map((skill: SkillType) => (
-        <div class="flex gap-2 border border-slate-200">
+        <div class="flex gap-2 border border-slate-200 cursor-grab">
           <Icon name={skill.icon} />
           <div class="flex flex-col">
             <h3 class="">{skill.name}</h3>

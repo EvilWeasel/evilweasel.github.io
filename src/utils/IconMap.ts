@@ -14,6 +14,7 @@ export const IconMap = {
   markdown: "mdi:language-markdown",
   mysql: "devicon-plain:mysql-wordmark",
   nodejs: "devicon-plain:nodejs-wordmark",
+  bun: "devicon-plain:bun",
   powershell: "devicon-plain:powershell",
   react: "mdi:react",
   astro: "devicon-plain:astro",
@@ -71,6 +72,12 @@ export const SkillList2: Array<SkillType> = [
     icon: IconMap.nodejs,
     description:
       "Genutzt als Laufzeitumgebung für Backend-Services und kleinere Webprojekte.",
+  },
+  {
+    name: "Bun.sh",
+    icon: IconMap.bun,
+    description:
+      "Meine präferierte alternative Laufzeitumgebung für JavaScript Projekte.",
   },
   {
     name: "PowerShell",

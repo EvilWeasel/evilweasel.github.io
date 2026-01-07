@@ -14,12 +14,11 @@
     <p
       class="text-shadow-sm shadow-slate-100 dark:text-slate-200 dark:shadow-black"
     >
-      <span class="text-fuchsia-500 scale-150 inline-block">”</span> Leidenschaftlicher
-      Beibringer von Wissen und Programmierer. In meiner Welt verschmelzen Technologie
-      und Bildung zu einzigartigen Erlebnissen. Stets auf der Suche nach neuen Herausforderungen
-      und Wegen, um Wissen spielerisch zu vermitteln. <span
-        class="text-fuchsia-500 scale-150 inline-block">“</span
-      >
+      <span class="text-fuchsia-500 scale-150 inline-block">”</span> 
+Ich bin Developer mit jahrelangem Linux-Background und ca. 3 Jahren Erfahrung in Webentwicklung und Lehre.
+Ich schätze offene Kommunikation und arbeite gerne in Teams, in denen Wissen geteilt und Lösungsansätze diskutiert werden.
+Technologie sollte Menschen befähigen. Daran orientiere ich meine Arbeit.
+      <span class="text-fuchsia-500 scale-150 inline-block">“</span>
     </p>
   </div>
   <img src="/me.png" alt="Image of myself" />
@@ -39,6 +38,7 @@
   section.hero .hero-text {
     display: flex;
     flex-direction: column;
+    gap: 8px;
     font-size: 1rem;
     line-height: 1.2rem;
     width: 100%;
@@ -87,6 +87,16 @@
     flex-shrink: 1;
   }
   @media only screen and (max-width: 1024px) {
+    .hero-text p {
+      margin: 1rem;
+      font-size: 1em;
+    }
+    .hero img {
+      max-width: 300px;
+    }
+    section.hero .hero-text h1 {
+      font-size: 2.5em;
+    }
     section.hero {
       grid-template-columns: 1fr;
     }

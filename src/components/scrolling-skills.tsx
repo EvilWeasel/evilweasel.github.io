@@ -23,7 +23,7 @@ export const ScrollingSkills = () => {
         style={{ userSelect: "none" }}
       >
         <CarouselContent>
-          {SkillList.map((skill: SkillType, index) => (
+          {[...SkillList, ...SkillList].map((skill: SkillType, index) => (
             <CarouselItem className={carouselClns} key={index}>
               <SkillCard skill={skill} />
             </CarouselItem>

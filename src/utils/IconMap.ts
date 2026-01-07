@@ -56,10 +56,10 @@ export const SkillList: Array<SkillType> = [
 
 export const SkillList2: Array<SkillType> = [
   {
-    name: "C#",
+    name: "C# / Dotnet",
     icon: IconMap.csharp,
     description:
-      "Einsatz vor allem im Unterricht, mit Fokus auf OOP, saubere Strukturen und verständlichen Code.",
+      "Einsatz vor allem von MAUI und ASP im Unterricht. Fokus auf OOP, saubere Strukturen und verständlichen Code.",
   },
   {
     name: "MySQL",
